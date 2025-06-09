@@ -11,7 +11,7 @@ schema_view = get_schema_view(
         title="Todo API",
         default_version='v1',
         description="Todo Api Create Django + DRF",
-        contact=openapi.Contact(name="My Github", url="https://github.com/aliseyedi01"),
+        contact=openapi.Contact(name="My Github", url="https://github.com/HaCkEr-0827"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,
@@ -24,6 +24,7 @@ urlpatterns = [
     path('task/', include('tasks.urls')),
     path('auth/', include('accounts.urls')),
     path('category/', include('categories.urls')),
+    
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
